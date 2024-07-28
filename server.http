@@ -1,7 +1,10 @@
-POST http://localhost:3333/hello
+POST http://localhost:3333/transactions
 content-type : application/json
-{
 
+{
+    "title": "Freelancer",
+    "amount": 8000,
+    "type": "credit"
 }
 ###
-GET http://localhost:3333/hello
+GET http://localhost:3333/transactions
