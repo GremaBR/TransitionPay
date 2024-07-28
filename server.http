@@ -8,3 +8,9 @@ content-type : application/json
 }
 ###
 GET http://localhost:3333/transactions
+
+###
+GET http://localhost:3333/transactions/e806b0a4-3d8e-4ffb-ba46-49f9fe17fc93
+
+###
+GET http://localhost:3333/transactions/summary
