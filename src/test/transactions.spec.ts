@@ -21,4 +21,23 @@ describe('transactionsRoutes', ()=>{
         type: "credit"
        }).expect(201)
     })
+
+    it('should be able to list all transactions', async () =>{
+        const createTransactionResponse = await request(app.server)
+            .post('/transactions')
+            .send({
+                title: 'New transactions',
+                amount: 5000,
+                type: 'credit'
+            })
+
+        const cookies = createTransactionResponse.get('Set-Cookie') as string[]
+
+        const listTransactionsReponse = await request(app.server)
+            .get('/transactions')
+            .set('Cookie', cookies)
+            .expect(200)
+        console.log(listTransactionsReponse)
+        
+    })
 })
